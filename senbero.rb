@@ -9,15 +9,17 @@ drinks = [
     {name:'グラスワイン',price:260},
     {name:'ウーロンハイ',price:250}
     ]
+
 drinks.each.with_index(1) do |drink,i|
     puts "#{i}. #{drink[:name]}#{drink[:price]}"
 end
+
+puts "商品を選択 >"
+
     drinks_selected_num = gets.to_i - 1
     drinks_al = drinks[drinks_selected_num]
     loop do
-        if drinks_selected_num >= 4
-          puts "1から4の数字を入力してください"
-          puts "商品を選択 >"
+        if drinks_selected_num >= 4         
           drinks_selected_num = gets.to_i - 1
           drinks_al = drinks[drinks_selected_num]
         else
@@ -25,6 +27,7 @@ end
           break
         end
       end
+
       
 puts '----------------------------'
 puts '冷たいお惣菜menuを以下から選んでください'
@@ -38,12 +41,13 @@ c_foods = [
 c_foods.each.with_index(1) do |c_food,i|
     puts "#{i}. #{c_food[:name]}#{c_food[:price]}"
 end
+
+puts "商品を選択 >"
+
 c_foods_selected_num = gets.to_i - 1
 c_foods_menu = c_foods[c_foods_selected_num]
 loop do
-    if c_foods_selected_num >= 4
-      puts "1から4の数字を入力してください"
-      puts "商品を選択 >"
+    if c_foods_selected_num >= 4      
       c_foods_selected_num = gets.to_i - 1
       c_foods_menu = c_foods[c_foods_selected_num]
     else
@@ -66,13 +70,14 @@ h_foods.each.with_index(1) do |h_food,i|
     puts "#{i}. #{h_food[:name]}#{h_food[:price]}"
 end
 
+puts "商品を選択 >"
+
 h_foods_selected_num = gets.to_i - 1
 h_foods_menu = h_foods[h_foods_selected_num]
 
 loop do
     if h_foods_selected_num >= 4
-      puts "1から4の数字を入力してください"
-      puts "商品を選択 >"
+      
       h_foods_selected_num = gets.to_i - 1
       h_foods_menu = h_foods[h_foods_selected_num]
     else
