@@ -3,6 +3,7 @@ puts <<~EOS
  '-------------------'
  'ドリンクを選択してください'
 EOS
+
 drinks = [
     {name:'ハイボール', price:280},
     {name:'ビール',price:300},
@@ -16,12 +17,12 @@ end
 
 puts "商品を選択 >"
 
-    drinks_selected_num = gets.to_i - 1
-    drinks_al = drinks[drinks_selected_num]
+    drinks_selected_num = gets.to_i
+    drinks_al = drinks[drinks_selected_num - 1]
     loop do
         if drinks_selected_num >= 4         
-          drinks_selected_num = gets.to_i - 1
-          drinks_al = drinks[drinks_selected_num]
+          drinks_selected_num = gets.to_i
+          drinks_al = drinks[drinks_selected_num - 1]
         else
           puts "#{drinks_al[:name]}ですね"
           break
@@ -44,12 +45,12 @@ end
 
 puts "商品を選択 >"
 
-c_foods_selected_num = gets.to_i - 1
-c_foods_menu = c_foods[c_foods_selected_num]
+c_foods_selected_num = gets.to_i
+c_foods_menu = c_foods[c_foods_selected_num - 1]
 loop do
     if c_foods_selected_num >= 4      
-      c_foods_selected_num = gets.to_i - 1
-      c_foods_menu = c_foods[c_foods_selected_num]
+      c_foods_selected_num = gets.to_i
+      c_foods_menu = c_foods[c_foods_selected_num  - 1]
     else
       puts "#{c_foods_menu[:name]}ですね"
       break
@@ -72,14 +73,14 @@ end
 
 puts "商品を選択 >"
 
-h_foods_selected_num = gets.to_i - 1
-h_foods_menu = h_foods[h_foods_selected_num]
+h_foods_selected_num = gets.to_i
+h_foods_menu = h_foods[h_foods_selected_num - 1]
 
 loop do
     if h_foods_selected_num >= 4
       
-      h_foods_selected_num = gets.to_i - 1
-      h_foods_menu = h_foods[h_foods_selected_num]
+      h_foods_selected_num = gets.to_i 
+      h_foods_menu = h_foods[h_foods_selected_num - 1]
     else
       puts "#{h_foods_menu[:name]}ですね"
       break
