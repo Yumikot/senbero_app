@@ -91,10 +91,13 @@ puts "３品のお会計"
 sum = drinks_al[:price] + c_foods_menu[:price] + h_foods_menu[:price]
 puts "#{sum}円"
 
-if sum<=750
+
+case sum
+
+when 500..800
     puts "もう一杯行っちゃおう!!"
-elsif sum <=1000
+when 801..1000
     puts "せんべろ達成!"
-else
+else 
     puts "予算over"
 end
