@@ -94,7 +94,7 @@ puts "#{sum}円"
 
 case sum
 
-when 500..800
+when 0..800
     puts "もう一杯行っちゃおう!!"
 when 801..1000
     puts "せんべろ達成!"
