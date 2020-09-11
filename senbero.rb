@@ -21,7 +21,7 @@ puts "商品を選択 >"
     drinks_selected_num = gets.to_i
     drinks_al = drinks[drinks_selected_num - 1]
     loop do
-        if drinks_selected_num >= drinks.size         
+        if drinks_selected_num > drinks.size         
           drinks_selected_num = gets.to_i
           drinks_al = drinks[drinks_selected_num - 1]
         else
@@ -50,7 +50,7 @@ puts "商品を選択 >"
 c_foods_selected_num = gets.to_i
 c_foods_menu = c_foods[c_foods_selected_num - 1]
 loop do
-    if c_foods_selected_num >= c_foods.size      
+    if c_foods_selected_num > c_foods.size      
       c_foods_selected_num = gets.to_i
       c_foods_menu = c_foods[c_foods_selected_num  - 1]
     else
@@ -79,7 +79,7 @@ h_foods_selected_num = gets.to_i
 h_foods_menu = h_foods[h_foods_selected_num - 1]
 
 loop do
-    if h_foods_selected_num >= h_foods.size
+    if h_foods_selected_num > h_foods.size
       
       h_foods_selected_num = gets.to_i 
       h_foods_menu = h_foods[h_foods_selected_num - 1]
