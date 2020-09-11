@@ -8,7 +8,8 @@ drinks = [
     {name:'ハイボール', price:280},
     {name:'ビール',price:300},
     {name:'グラスワイン',price:260},
-    {name:'ウーロンハイ',price:250}
+    {name:'ホッピー',price:250},
+    {name:'ウーロンハイ',price:220}
     ]
 
 drinks.each.with_index(1) do |drink,i|
@@ -20,7 +21,7 @@ puts "商品を選択 >"
     drinks_selected_num = gets.to_i
     drinks_al = drinks[drinks_selected_num - 1]
     loop do
-        if drinks_selected_num >= 4         
+        if drinks_selected_num >= drinks.size         
           drinks_selected_num = gets.to_i
           drinks_al = drinks[drinks_selected_num - 1]
         else
@@ -37,6 +38,7 @@ c_foods = [
     {name:'枝豆', price:220},
     {name:'冷奴',price:180},
     {name:'お新香',price:250},
+    {name:'ピクルス',price:300},
     {name:'おひたし',price:170}
     ]
 c_foods.each.with_index(1) do |c_food,i|
@@ -48,7 +50,7 @@ puts "商品を選択 >"
 c_foods_selected_num = gets.to_i
 c_foods_menu = c_foods[c_foods_selected_num - 1]
 loop do
-    if c_foods_selected_num >= 4      
+    if c_foods_selected_num >= c_foods.size      
       c_foods_selected_num = gets.to_i
       c_foods_menu = c_foods[c_foods_selected_num  - 1]
     else
@@ -77,7 +79,7 @@ h_foods_selected_num = gets.to_i
 h_foods_menu = h_foods[h_foods_selected_num - 1]
 
 loop do
-    if h_foods_selected_num >= 4
+    if h_foods_selected_num >= h_foods.size
       
       h_foods_selected_num = gets.to_i 
       h_foods_menu = h_foods[h_foods_selected_num - 1]
