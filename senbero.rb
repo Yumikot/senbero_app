@@ -18,18 +18,21 @@ end
 
 puts "商品を選択 >"
 
-    drinks_selected_num = gets.to_i
-    drinks_al = drinks[drinks_selected_num - 1]
+def choice(kind)
+  kind_selected_num = gets.to_i
+    kind_menu = kind[kind_selected_num - 1]
     loop do
-        if drinks_selected_num > drinks.size         
-          drinks_selected_num = gets.to_i
-          drinks_al = drinks[drinks_selected_num - 1]
+        if kind_selected_num > kind.size         
+          kind_selected_num = gets.to_i
+          kind_menu = kind[kind_selected_num - 1]
         else
-          puts "#{drinks_al[:name]}ですね"
+          puts "#{kind_menu[:name]}ですね"
           break
         end
       end
-
+end
+    
+choice(drinks)
       
 puts '----------------------------'
 puts '冷たいお惣菜menuを以下から選んでください'
@@ -47,17 +50,7 @@ end
 
 puts "商品を選択 >"
 
-c_foods_selected_num = gets.to_i
-c_foods_menu = c_foods[c_foods_selected_num - 1]
-loop do
-    if c_foods_selected_num > c_foods.size      
-      c_foods_selected_num = gets.to_i
-      c_foods_menu = c_foods[c_foods_selected_num  - 1]
-    else
-      puts "#{c_foods_menu[:name]}ですね"
-      break
-    end
-  end
+choice(c_foods)
 
 puts '----------------------------'
 puts '暖かいお惣菜menuを以下から選んでください'
@@ -75,22 +68,13 @@ end
 
 puts "商品を選択 >"
 
-h_foods_selected_num = gets.to_i
-h_foods_menu = h_foods[h_foods_selected_num - 1]
+choice(h_foods)
 
-loop do
-    if h_foods_selected_num > h_foods.size
-      
-      h_foods_selected_num = gets.to_i 
-      h_foods_menu = h_foods[h_foods_selected_num - 1]
-    else
-      puts "#{h_foods_menu[:name]}ですね"
-      break
-    end
-  end
 puts '----------------------------'
 puts "３品のお会計"
-sum = drinks_al[:price] + c_foods_menu[:price] + h_foods_menu[:price]
+
+sum = drinks_menu[:price] + c_foods_menu[:price] + h_foods_menu[:price]
+
 puts "#{sum}円"
 
 
@@ -101,5 +85,5 @@ when 0..800
 when 801..1000
     puts "せんべろ達成!"
 else 
-    puts "予算over"
+    puts "予算overです、、、！"
 end
