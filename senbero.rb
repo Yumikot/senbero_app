@@ -33,7 +33,7 @@ def choice(kind)
       kind_menu   
 end
     
-choice(drinks)
+drinks_menu = choice(drinks)
 
       
 puts '----------------------------'
@@ -52,7 +52,7 @@ end
 
 puts "商品を選択 >"
 
-choice(c_foods)
+c_foods_menu = choice(c_foods)
 
 puts '----------------------------'
 puts '暖かいお惣菜menuを以下から選んでください'
@@ -70,7 +70,7 @@ end
 
 puts "商品を選択 >"
 
-choice(h_foods)
+h_foods_menu = choice(h_foods)
 
 puts '----------------------------'
 puts "３品のお会計"
