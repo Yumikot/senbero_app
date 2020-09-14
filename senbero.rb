@@ -22,17 +22,19 @@ def choice(kind)
   kind_selected_num = gets.to_i
     kind_menu = kind[kind_selected_num - 1]
     loop do
-        if kind_selected_num > kind.size         
+        if kind_selected_num > kind.size && kind.size>0        
           kind_selected_num = gets.to_i
           kind_menu = kind[kind_selected_num - 1]
         else
           puts "#{kind_menu[:name]}ですね"
-          break
-        end
-      end
+          break 
+        end    
+      end  
+      kind_menu   
 end
     
 choice(drinks)
+
       
 puts '----------------------------'
 puts '冷たいお惣菜menuを以下から選んでください'
@@ -73,8 +75,10 @@ choice(h_foods)
 puts '----------------------------'
 puts "３品のお会計"
 
-sum = drinks_menu[:price] + c_foods_menu[:price] + h_foods_menu[:price]
 
+
+
+sum = drinks_menu[:price] + c_foods_menu[:price] + h_foods_menu[:price]
 puts "#{sum}円"
 
 
