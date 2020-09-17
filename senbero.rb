@@ -4,6 +4,27 @@ puts <<~EOS
  'ドリンクを選択してください'
 EOS
 
+def izakaya(items)
+    items.each.with_index(1) do |item,i|
+            puts "#{i}. #{item[:name]}#{item[:price]}"  
+    end
+end
+
+def choice(kind)
+    kind_selected_num = gets.to_i
+      kind_menu = kind[kind_selected_num - 1]
+      loop do
+          if kind_selected_num > kind.size && kind.size>0        
+            kind_selected_num = gets.to_i
+            kind_menu = kind[kind_selected_num - 1]
+          else
+            puts "#{kind_menu[:name]}ですね"
+            break 
+          end    
+        end  
+        kind_menu   
+  end
+
 drinks = [
     {name:'ハイボール', price:280},
     {name:'ビール',price:300},
@@ -11,27 +32,10 @@ drinks = [
     {name:'ホッピー',price:250},
     {name:'ウーロンハイ',price:220}
     ]
-
-drinks.each.with_index(1) do |drink,i|
-    puts "#{i}. #{drink[:name]}#{drink[:price]}"
-end
+   
+izakaya(drinks)
 
 puts "商品を選択 >"
-
-def choice(kind)
-  kind_selected_num = gets.to_i
-    kind_menu = kind[kind_selected_num - 1]
-    loop do
-        if kind_selected_num > kind.size && kind.size>0        
-          kind_selected_num = gets.to_i
-          kind_menu = kind[kind_selected_num - 1]
-        else
-          puts "#{kind_menu[:name]}ですね"
-          break 
-        end    
-      end  
-      kind_menu   
-end
     
 drinks_menu = choice(drinks)
 
@@ -46,9 +50,8 @@ c_foods = [
     {name:'ピクルス',price:300},
     {name:'おひたし',price:170}
     ]
-c_foods.each.with_index(1) do |c_food,i|
-    puts "#{i}. #{c_food[:name]}#{c_food[:price]}"
-end
+
+izakaya(c_foods)
 
 puts "商品を選択 >"
 
@@ -63,10 +66,8 @@ h_foods = [
     {name:'焼き魚',price:300},
     {name:'だし巻き卵',price:220}
     ]
-
-h_foods.each.with_index(1) do |h_food,i|
-    puts "#{i}. #{h_food[:name]}#{h_food[:price]}"
-end
+    
+izakaya(h_foods)
 
 puts "商品を選択 >"
 
@@ -74,8 +75,6 @@ h_foods_menu = choice(h_foods)
 
 puts '----------------------------'
 puts "３品のお会計"
-
-
 
 
 sum = drinks_menu[:price] + c_foods_menu[:price] + h_foods_menu[:price]
